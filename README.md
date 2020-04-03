@@ -3,6 +3,8 @@ Stream based renderer
 
 ## Features
 - Tiny
+- Component
+- Context
 - SSR
 
 ## Todo example
