@@ -124,7 +124,7 @@ server.listen(port, hostname, () => {
 });
 ```
 
-## Tools
+## IDE plugins
 Install [lit-html IDE plugins](https://lit-html.polymer-project.org/guide/tools#ide-plugins) to have syntax highlight.
 
 ## License
