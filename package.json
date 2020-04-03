@@ -1,0 +1,16 @@
+{
+  "name": "srender",
+  "version": "0.0.1",
+  "description": "Stream based renderer",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jas-chen/srender.git"
+  },
+  "author": "Jas Chen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jas-chen/srender/issues"
+  },
+  "homepage": "https://github.com/jas-chen/srender#readme"
+}
