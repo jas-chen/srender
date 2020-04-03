@@ -1,6 +1,11 @@
 # srender
 Stream based renderer
 
+## Features
+- Tiny
+- SSR
+
+## Todo example
 ```javascript
 import { createHtml, createRef, writeToNode, rawHtml } from "srender";
 
@@ -79,3 +84,9 @@ writeToNode(
   node => root.appendChild(node)
 );
 ```
+
+## Tools
+Install [lit-html IDE plugins](https://lit-html.polymer-project.org/guide/tools#ide-plugins) to have syntax highlight.
+
+## License
+MIT
