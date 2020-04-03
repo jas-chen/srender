@@ -87,6 +87,43 @@ writeToNode(
 );
 ```
 
+## SSR example
+```javascript
+import http from "http";
+import { write, createHtml } from "srender";
+const hostname = "127.0.0.1";
+const port = 3000;
+
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader("Content-Type", "text/html; charset=utf-8");
+
+  write(
+    () => {
+      const html = createHtml();
+      html`
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <title>srender demo</title>
+          </head>
+          <body>
+            Hello!
+          </body>
+        </html>
+      `;
+    },
+    (data) => res.write(data)
+  );
+
+  res.end();
+});
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
+```
+
 ## Tools
 Install [lit-html IDE plugins](https://lit-html.polymer-project.org/guide/tools#ide-plugins) to have syntax highlight.
 
