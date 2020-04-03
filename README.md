@@ -2,7 +2,7 @@
 Stream based renderer
 
 ## Features
-- Tiny
+- Tiny (only ~70 sloc)
 - Component
 - Context
 - SSR
