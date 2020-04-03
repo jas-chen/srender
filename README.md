@@ -26,7 +26,7 @@ function TodoMVC(html, { items = [] }, context) {
 
   html`
     <h1>Todo MVC</h1>
-    ${rawHtml("<h2>adasd</h2>")}
+    ${rawHtml("<h2>srender example</h2>")}
     <form id="${formRef}">
       <input id="${inputRef}" />
       <button>Add</button>
