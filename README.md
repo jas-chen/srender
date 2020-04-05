@@ -9,7 +9,7 @@ Stream based renderer
 
 ## Todo example
 ```javascript
-import { createHtml, createRef, writeToNode, rawHtml } from "srender";
+import { createHtml, createRef, renderToNode, rawHtml } from "srender";
 
 const root = document.getElementById("root");
 
@@ -52,7 +52,7 @@ function TodoMVC(html, { items = [] }, context) {
 
     $form.onsubmit = e => {
       e.preventDefault();
-      writeToNode(
+      renderToNode(
         () => {
           const html = createHtml({
             ...context,
@@ -75,13 +75,14 @@ function TodoMVC(html, { items = [] }, context) {
   };
 }
 
-writeToNode(
+renderToNode(
   () => {
     const html = createHtml({
       createRef: createRef.bind({}), // initialize createRef
       name: "root",
     });
-    return html(TodoMVC, { items: ["foo", "bar"] });
+
+    html(TodoMVC, { items: ["foo", "bar"] });
   },
   node => root.appendChild(node)
 );
@@ -90,7 +91,7 @@ writeToNode(
 ## SSR example
 ```javascript
 import http from "http";
-import { write, createHtml } from "srender";
+import { render, createHtml } from "srender";
 const hostname = "127.0.0.1";
 const port = 3000;
 
@@ -98,7 +99,7 @@ const server = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader("Content-Type", "text/html; charset=utf-8");
 
-  write(
+  render(
     () => {
       const html = createHtml();
       html`
