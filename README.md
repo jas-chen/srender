@@ -16,9 +16,9 @@ import { createHtml, createRef, renderToNode, rawHtml } from "srender";
 
 const root = document.getElementById("root");
 
-const TodoItem = (html, { item }, { name }) => html`
+const TodoItem = (html, props, context) => html`
   <li>
-    ${item}_${name}
+    ${props.item}_${context.name}
     <button type="button" name="deleteButton">X</button>
   </li>
 `;
