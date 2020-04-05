@@ -48,6 +48,7 @@ function TodoMVC(html, { items = [] }, context) {
     </ul>
   `;
 
+  // component did mount
   return () => {
     const $form = formRef.get();
     const $input = inputRef.get();
@@ -80,10 +81,12 @@ function TodoMVC(html, { items = [] }, context) {
 
 renderToNode(
   () => {
-    const html = createHtml({
+    const context = {
       createRef: createRef.bind({}), // initialize createRef
       name: "root",
-    });
+    };
+
+    const html = createHtml(context);
 
     html(TodoMVC, { items: ["foo", "bar"] });
   },
