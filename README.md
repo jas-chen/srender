@@ -10,11 +10,6 @@ Stream based renderer
 - Context
 - SSR
 
-## Installation
-```
-yarn add srender
-```
-
 ## Todo example
 ```javascript
 import { createHtml, createRef, renderToNode, rawHtml } from "srender";
