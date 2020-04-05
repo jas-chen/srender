@@ -121,7 +121,7 @@ const server = http.createServer((req, res) => {
       `;
     },
     {
-        onData: (data) => res.write(data),
+      onData: (data) => res.write(data),
     }
   );
 
