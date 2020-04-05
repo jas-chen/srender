@@ -2,7 +2,10 @@
   "name": "srender",
   "version": "0.0.1",
   "description": "Stream based renderer",
-  "main": "src/index.js",
+  "source": "src/index.js",
+  "main": "lib/srender.js",
+  "module": "dist/srender.module.js",
+  "unpkg": "dist/srender.umd.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jas-chen/srender.git"
@@ -12,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/jas-chen/srender/issues"
   },
-  "homepage": "https://github.com/jas-chen/srender#readme"
+  "homepage": "https://github.com/jas-chen/srender#readme",
+  "scripts": {
+    "build": "microbundle",
+    "dev": "microbundle watch"
+  },
+  "devDependencies": {
+    "microbundle": "^0.11.0"
+  }
 }

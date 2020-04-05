@@ -1,11 +1,19 @@
+[![npm version](https://img.shields.io/npm/v/srender.svg?style=flat-square)](https://www.npmjs.com/package/srender)
+[![minzipped size](https://img.shields.io/bundlephobia/minzip/srender.svg)](https://bundlephobia.com/result?p=srender@0.0.1)
+
 # srender
 Stream based renderer
 
 ## Features
-- Tiny (only ~70 sloc)
+- Tiny (only ~80 sloc)
 - Component
 - Context
 - SSR
+
+## Installation
+```
+yarn add srender
+```
 
 ## Todo example
 ```javascript
@@ -90,8 +98,8 @@ renderToNode(
 
 ## SSR example
 ```javascript
-import http from "http";
-import { render, createHtml } from "srender";
+const http = require("http");
+const { render, createHtml } = require("srender");
 const hostname = "127.0.0.1";
 const port = 3000;
 
@@ -114,7 +122,9 @@ const server = http.createServer((req, res) => {
         </html>
       `;
     },
-    (data) => res.write(data)
+    {
+        onData: (data) => res.write(data),
+    }
   );
 
   res.end();
