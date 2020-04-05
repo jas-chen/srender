@@ -1,5 +1,5 @@
 [![npm version](https://img.shields.io/npm/v/srender.svg?style=flat-square)](https://www.npmjs.com/package/srender)
-[![minzipped size](https://img.shields.io/bundlephobia/minzip/srender.svg)](https://bundlephobia.com/result?p=srender@0.0.1)
+[![minzipped size](https://img.shields.io/bundlephobia/minzip/srender.svg?style=flat-square)](https://bundlephobia.com/result?p=srender@0.0.1)
 
 # srender
 Stream based renderer
