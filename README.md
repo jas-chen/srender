@@ -8,7 +8,7 @@ Stream based renderer
 - Tiny (only ~80 sloc)
 - Component
 - Context
-- SSR
+- SSR and (partial) hydration
 
 ## Todo example
 ```javascript
