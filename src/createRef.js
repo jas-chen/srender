@@ -1,3 +1,4 @@
+/* eslint-env browser */
 export function createRef() {
   if (!this.instanceId) {
     this.instanceId = 0;
