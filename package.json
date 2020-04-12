@@ -3,10 +3,10 @@
   "version": "0.0.2",
   "description": "Stream based renderer",
   "type": "module",
-  "main": "lib/cjs/index.js",
+  "main": "lib/cjs/index.cjs",
   "unpkg": "lib/umd/srender.umd.js",
   "exports": {
-    ".": "lib/cjs/index.js",
+    ".": "lib/cjs/index.cjs",
     "./module": "lib/esm/index.js"
   },
   "repository": {
@@ -21,7 +21,7 @@
   "homepage": "https://github.com/jas-chen/srender#readme",
   "scripts": {
     "build:umd": "microbundle -f umd --output lib/umd",
-    "build:cjs": "babel src -d lib/cjs --plugins=@babel/plugin-transform-modules-commonjs",
+    "build:cjs": "babel src -d lib/cjs --plugins=@babel/plugin-transform-modules-commonjs --out-file-extension .cjs --source-maps",
     "build:esm": "mkdir -p lib/esm && cp -r src/ lib/esm/",
     "build": "rm -rf lib && yarn build:umd && yarn build:cjs && yarn build:esm",
     "dev": "microbundle watch",
