@@ -19,6 +19,7 @@
   "scripts": {
     "build": "microbundle",
     "dev": "microbundle watch",
+    "test": "yarn lint",
     "lint": "eslint src/**",
     "lint:fix": "eslint --fix src/**"
   },

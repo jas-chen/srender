@@ -5,8 +5,11 @@ name: CI
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on:
-  push:
   pull_request:
+  push:
+    branches:
+      - master
+      - dev
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -23,3 +26,5 @@ jobs:
           node-version: '12.x'
       - name: Install dependencies
         run: yarn --frozen-lockfile
+      - name: Test
+        run: yarn test
