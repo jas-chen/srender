@@ -4,14 +4,14 @@ const ESCAPE = {
   "<": "&lt;",
   ">": "&gt;",
   '"': "&quot;",
-  "'": "&apos;"
+  "'": "&apos;",
 };
 
 let onData;
 let onCallback;
 let writing;
 
-export const rawHtml = html => {
+export const rawHtml = (html) => {
   const o = Object.create(null);
   o[RAW_HTML] = html;
   return o;
@@ -28,7 +28,7 @@ export const render = (fn, options) => {
   onCallback = prevOnCallback;
 };
 
-export const createHtml = context => {
+export const createHtml = (context) => {
   function html(nodeName, ...variables) {
     if (!writing) throw new Error("Please use write methods to start writing.");
 
@@ -46,7 +46,7 @@ export const createHtml = context => {
             onData(
               hasOwnProperty.call(variable, RAW_HTML)
                 ? variable[RAW_HTML]
-                : variable.toString().replace(/(<|>|"|')/g, c => ESCAPE[c])
+                : variable.toString().replace(/(<|>|"|')/g, (c) => ESCAPE[c])
             );
         }
 

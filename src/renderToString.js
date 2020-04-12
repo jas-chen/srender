@@ -5,8 +5,8 @@ export const renderToString = (fn, callback) => {
   const html = [];
 
   render(fn, {
-    onData: token => html.push(token),
-    onCallback: callback => callbacks.push(callback)
+    onData: (token) => html.push(token),
+    onCallback: (callback) => callbacks.push(callback),
   });
   callback(html.join(""));
 

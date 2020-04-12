@@ -1,6 +1,7 @@
+/* eslint-env browser */
 import { renderToString } from "./renderToString";
 
 export const renderToNode = (fn, callback) =>
-  renderToString(fn, html =>
+  renderToString(fn, (html) =>
     callback(document.createRange().createContextualFragment(html))
   );
