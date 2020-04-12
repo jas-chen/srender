@@ -2,10 +2,13 @@
   "name": "srender",
   "version": "0.0.2",
   "description": "Stream based renderer",
-  "source": "src/index.js",
-  "main": "lib/srender.js",
-  "module": "dist/srender.module.js",
-  "unpkg": "dist/srender.umd.js",
+  "type": "module",
+  "main": "lib/cjs/index.cjs",
+  "unpkg": "lib/umd/srender.umd.js",
+  "exports": {
+    ".": "lib/cjs/index.cjs",
+    "./module": "lib/esm/index.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jas-chen/srender.git"
@@ -17,13 +20,19 @@
   },
   "homepage": "https://github.com/jas-chen/srender#readme",
   "scripts": {
-    "build": "microbundle",
+    "build:umd": "microbundle -f umd --output lib/umd",
+    "build:cjs": "babel src -d lib/cjs --plugins=@babel/plugin-transform-modules-commonjs --out-file-extension .cjs --source-maps",
+    "build:esm": "mkdir -p lib/esm && cp -r src/ lib/esm/",
+    "build": "rm -rf lib && yarn build:umd && yarn build:cjs && yarn build:esm",
     "dev": "microbundle watch",
     "test": "yarn lint",
     "lint": "eslint src/**",
     "lint:fix": "eslint --fix src/**"
   },
   "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.9.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.1",
     "eslint-plugin-prettier": "^3.1.2",
