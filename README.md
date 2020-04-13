@@ -2,7 +2,7 @@
 [![minzipped size](https://img.shields.io/bundlephobia/minzip/srender.svg?style=flat-square)](https://bundlephobia.com/result?p=srender)
 
 # srender
-Stream based renderer
+> Tiny web framework
 
 ## Features
 - Tiny (only ~80 sloc)

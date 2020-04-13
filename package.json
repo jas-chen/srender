@@ -1,7 +1,7 @@
 {
   "name": "srender",
   "version": "0.0.2",
-  "description": "Stream based renderer",
+  "description": "Tiny web framework",
   "type": "module",
   "main": "lib/cjs/index.cjs",
   "unpkg": "lib/umd/srender.umd.js",
